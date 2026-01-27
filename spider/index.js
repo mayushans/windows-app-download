@@ -68,5 +68,5 @@ var appsnew = [];
 
   fs.writeFileSync('./src/data/apps.json', JSON.stringify(outdata))
   log.add('全部执行完毕')
-  fs.writeFileSync('./static/spider_log.json', JSON.stringify(log.get()))
+  fs.writeFileSync('./public/spider_log.json', JSON.stringify(log.get()))
 })()
