@@ -1,0 +1,110 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches: ["main"]  # 在主分支推送时触发
+  schedule:
+    # 每天 0 点（UTC时间）自动执行
+    # 注意：GitHub Actions 使用 UTC 时间
+    # 北京时间 0 点 = UTC 16 点（夏季时间 UTC 15 点）
+    - cron: '17 0 * * *'  # 每天 UTC 17:00（北京时间 01:00）
+    # 如果您希望在北京时间 0 点执行，请使用：
+    # - cron: '0 16 * * *'  # 每天 UTC 16:00（北京时间 00:00）
+  workflow_dispatch:    # 允许手动触发
+
+permissions:
+  contents: write      # 允许写入内容（用于发布到 gh-pages）
+  pages: write         # 允许写入 Pages
+  id-token: write      # 用于 OIDC 认证
+
+# 设置 GitHub Pages 环境
+environment:
+  name: github-pages
+  url: ${{ steps.deployment.outputs.page_url }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    
+    # 为定时任务添加一个步骤显示执行原因
+    steps:
+      # 0. 显示触发原因（可选，便于调试）
+      - name: Display trigger reason
+        run: |
+          echo "触发原因:"
+          if [[ "${{ github.event_name }}" == "schedule" ]]; then
+            echo "🕒 定时任务触发"
+          elif [[ "${{ github.event_name }}" == "push" ]]; then
+            echo "📤 代码推送触发"
+          else
+            echo "🔧 手动触发"
+          fi
+      
+      # 1. 检出代码
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # 获取完整历史，确保定时任务能检测到最新代码
+      
+      # 2. 设置 Node.js 环境
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'  # 使用 Node.js 20，可根据需要修改版本
+          cache: 'npm'
+      
+      # 3. 获取当前时间（用于日志记录）
+      - name: Get current time
+        id: time
+        run: echo "current_time=$(date -u +'%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_OUTPUT
+      
+      # 4. 显示构建信息
+      - name: Show build info
+        run: |
+          echo "🔄 开始构建..."
+          echo "时间: ${{ steps.time.outputs.current_time }}"
+          echo "仓库: ${{ github.repository }}"
+          echo "分支: ${{ github.ref_name }}"
+      
+      # 5. 安装依赖
+      - name: Install dependencies
+        run: npm ci          # 使用 ci 而不是 install 确保锁定依赖版本
+      
+      # 6. 执行爬虫脚本（如果有）
+      - name: Run spider
+        run: npm run spider
+      
+      # 7. 构建项目
+      - name: Build project
+        run: npm run build
+      
+      # 8. 验证构建结果
+      - name: Check dist directory
+        run: |
+          echo "📁 构建结果检查："
+          ls -la dist/ 2>/dev/null || echo "dist 目录不存在"
+          if [ -d "dist" ] && [ "$(ls -A dist)" ]; then
+            echo "✅ dist 目录存在且不为空"
+            echo "文件数量：$(find dist -type f | wc -l)"
+          else
+            echo "❌ dist 目录不存在或为空"
+            exit 1
+          fi
+      
+      # 9. 部署到 GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist           # 要发布的目录
+          publish_branch: gh-pages      # 部署到的分支
+          force_orphan: true            # 强制清理历史，保持分支干净
+          # cname: example.com          # 如需自定义域名，取消注释并填写域名
+
+      # 10. 部署确认
+      - name: Deployment status
+        run: |
+          echo "✅ 部署完成！"
+          echo "📊 构建信息："
+          echo "   时间: ${{ steps.time.outputs.current_time }}"
+          echo "   触发: ${{ github.event_name }}"

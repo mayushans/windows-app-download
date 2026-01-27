@@ -8,7 +8,7 @@ async function add(text){
     + (d.getHours() < 10 ? '0' + d.getHours() : ( '' + d.getHours() )) + ':'
     + (d.getMinutes() < 10 ? '0' + d.getMinutes() : ( '' + d.getMinutes() ) ) + ':'
     + (d.getSeconds() < 10 ? '0' + d.getSeconds() : ( '' + d.getSeconds() ) );
-    // console.log("[" + dtstr + "] " + text + "\n")
+    console.log("[" + dtstr + "] " + text + "\n")
     logdata.push({
         time: dtstr,
         msg: text

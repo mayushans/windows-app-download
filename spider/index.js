@@ -40,6 +40,7 @@ var appsnew = [];
       res.check_time = nowtimeformat()
       res.status = 'success'
       appsnew.push(res)
+      log.add(list[i] + ' 执行成功')
     } catch (e) {
       log.add(list[i] + ' 执行失败')
       if(oldapplist[list[i]] != undefined){
@@ -67,5 +68,5 @@ var appsnew = [];
 
   fs.writeFileSync('./src/data/apps.json', JSON.stringify(outdata))
   log.add('全部执行完毕')
-  fs.writeFileSync('./src/data/log.json', JSON.stringify(log.get()))
+  fs.writeFileSync('./static/spider_log.json', JSON.stringify(log.get()))
 })()
