@@ -11,7 +11,7 @@ export default {
 <template>
   <div class="app-item">
     <div class="app-logo">
-      <img :src="'/static/icons/' + data.view_icon" />
+      <img :src="'./icons/' + data.view_icon" />
     </div>
     <div class="app-info">
       <div class="app-name">{{ data.view_name }}</div>

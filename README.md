@@ -6,7 +6,7 @@
 ## 开始项目
 
 ```sh
-npm install
+npm ci
 ```
 ## 抓取最新数据
 
