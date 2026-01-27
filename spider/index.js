@@ -52,7 +52,6 @@ var appsnew = [];
       log.add(list[i] + ' - ' + String(e))
     }
   }
-  // console.log(log.get())
   var appformat = []
   for(let i in appsnew){
     let type = appsnew[i].type || '其他'
@@ -65,7 +64,9 @@ var appsnew = [];
   for(let i in appformat){
     outdata.apps.push({ name: i, list: appformat[i] })
   }
-
+  if(fs.existsSync('./src/data')){
+    fs.mkdirSync('./src/data', { recursive: true })
+  }
   fs.writeFileSync('./src/data/apps.json', JSON.stringify(outdata))
   log.add('全部执行完毕')
   fs.writeFileSync('./public/spider_log.json', JSON.stringify(log.get()))
