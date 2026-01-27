@@ -17,15 +17,15 @@ permissions:
   pages: write         # 允许写入 Pages
   id-token: write      # 用于 OIDC 认证
 
-# 设置 GitHub Pages 环境
-environment:
-  name: github-pages
-  url: ${{ steps.deployment.outputs.page_url }}
-
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     
+    # 设置 GitHub Pages 环境
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
     # 为定时任务添加一个步骤显示执行原因
     steps:
       # 0. 显示触发原因（可选，便于调试）
