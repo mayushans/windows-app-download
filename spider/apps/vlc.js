@@ -5,9 +5,6 @@ export default async () => {
   var dom = Tools.dom(res)
   var url2 = dom('ul.dropdown-menu:nth-child(3) > li:nth-child(3) > a:nth-child(1)').attr('href')
   var version = url2.match(/\/\d+\.\d+\.\d+/g)[0].substring(1)
-  var res2 = await Tools.requestGet(url2)
-  var dom2 = Tools.dom(res2)
-  var x64url = dom2('#alt_link').attr('href')
   return {
     name: "vlc",
     view_name: "VLC Media Player",
@@ -15,6 +12,6 @@ export default async () => {
     page: url,
     type: "媒体播放器",
     version: version,
-    download_url: x64url,
+    download_url: url2,
   };
 };

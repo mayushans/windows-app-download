@@ -99,12 +99,12 @@ jobs:
           publish_dir: ./dist           # 要发布的目录
           publish_branch: gh-pages      # 部署到的分支
           force_orphan: true            # 强制清理历史，保持分支干净
-          # cname: example.com          # 如需自定义域名，取消注释并填写域名
+          cname: start.mys.plus         # 如需自定义域名，取消注释并填写域名
 
       # 10. 部署确认
       - name: Deployment status
         run: |
-          echo "✅ 部署完成！"
-          echo "📊 构建信息："
-          echo "   时间: ${{ steps.time.outputs.current_time }}"
-          echo "   触发: ${{ github.event_name }}"
+          echo "部署完成！"
+          echo "构建信息："
+          echo "时间: ${{ steps.time.outputs.current_time }}"
+          echo "触发: ${{ github.event_name }}"
