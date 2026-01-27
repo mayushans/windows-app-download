@@ -1,0 +1,123 @@
+/**
+ * Variable CSS
+ * 定义基础颜色以及信息
+ *
+ * 参考 https://react.fluentui.dev/
+ * 参考 https://arco.design/
+ */
+:root {
+  /* 字体 */
+  --font-family-base: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont,
+    Roboto, 'Helvetica Neue', sans-serif;
+  --font-family-monospace: Consolas, 'Courier New', Courier, monospace;
+  --font-family-numeric: Bahnschrift, 'Segoe UI', 'Segoe UI Web (West European)', -apple-system,
+    BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+  --font-size-1: 10px;
+  --font-size-2: 12px;
+  --font-size-3: 14px;
+  --font-size-4: 16px;
+  --font-size-5: 20px;
+  --font-size-6: 24px;
+  --font-size-7: 28px;
+  --font-size-8: 32px;
+  --font-size-9: 40px;
+  --font-size-10: 68px;
+  --line-height-1: 14px;
+  --line-height-2: 16px;
+  --line-height-3: 20px;
+  --line-height-4: 22px;
+  --line-height-5: 28px;
+  --line-height-6: 32px;
+  --line-height-7: 36px;
+  --line-height-8: 40px;
+  --line-height-9: 52px;
+  --line-height-10: 92px;
+  /* 阴影 */
+  --box-shadow-2: rgba(0, 0, 0, 0.12) 0px 0px 2px, rgba(0, 0, 0, 0.14) 0px 1px 2px; /* 基础阴影 */
+  --box-shadow-4: rgba(0, 0, 0, 0.12) 0px 0px 2px, rgba(0, 0, 0, 0.14) 0px 2px 4px;
+  --box-shadow-8: rgba(0, 0, 0, 0.12) 0px 0px 2px, rgba(0, 0, 0, 0.14) 0px 4px 8px;
+  --box-shadow-16: rgba(0, 0, 0, 0.12) 0px 0px 2px, rgba(0, 0, 0, 0.14) 0px 8px 16px;
+  --box-shadow-28: rgba(0, 0, 0, 0.12) 0px 0px 8px, rgba(0, 0, 0, 0.14) 0px 14px 28px;
+  --box-shadow-64: rgba(0, 0, 0, 0.12) 0px 0px 8px, rgba(0, 0, 0, 0.14) 0px 32px 64px;
+  --box-shadow-dark-2: rgba(0, 0, 0, 0.24) 0px 0px 2px, rgba(0, 0, 0, 0.28) 0px 1px 2px; /* 加深阴影 */
+  --box-shadow-dark-4: rgba(0, 0, 0, 0.24) 0px 0px 2px, rgba(0, 0, 0, 0.28) 0px 2px 4px;
+  --box-shadow-dark-8: rgba(0, 0, 0, 0.24) 0px 0px 2px, rgba(0, 0, 0, 0.28) 0px 4px 8px;
+  --box-shadow-dark-16: rgba(0, 0, 0, 0.24) 0px 0px 2px, rgba(0, 0, 0, 0.28) 0px 8px 16px;
+  --box-shadow-dark-28: rgba(0, 0, 0, 0.24) 0px 0px 8px, rgba(0, 0, 0, 0.28) 0px 14px 28px;
+  --box-shadow-dark-64: rgba(0, 0, 0, 0.24) 0px 0px 8px, rgba(0, 0, 0, 0.28) 0px 32px 64px;
+  /* 间距 */
+  --spacing-none: 0;
+  --spacing-xxs: 2px;
+  --spacing-xs: 4px;
+  --spacing-ns: 6px;
+  --spacing-s: 8px;
+  --spacing-nm: 10px;
+  --spacing-m: 12px;
+  --spacing-l: 16px;
+  --spacing-xl: 20px;
+  --spacing-xxl: 24px;
+  --spacing-xxxl: 32px;
+  /* 边框 */
+  --border-width-thin: 1px;
+  --border-width-thick: 2px;
+  --border-width-thicker: 3px;
+  --border-width-thickest: 4px;
+  /* 边框圆角 */
+  --border-radius-none: 0;
+  --border-radius-s: 2px;
+  --border-radius-m: 4px;
+  --border-radius-l: 6px;
+  --border-radius-xl: 8px;
+  --border-radius-circular: 10000px;
+  /* 动画 */
+  --animation-timing-function-accelerate-max: cubic-bezier(0.9, 0.1, 1, 0.2); /* 最大加速 */
+  --animation-timing-function-accelerate-mid: cubic-bezier(1, 0, 1, 1); /* 中等加速 */
+  --animation-timing-function-accelerate-min: cubic-bezier(0.8, 0, 0.78, 1); /* 最小加速 */
+  --animation-timing-function-decelerate-max: cubic-bezier(0.1, 0.9, 0.2, 1); /* 最大减速 */
+  --animation-timing-function-decelerate-mid: cubic-bezier(0, 0, 0, 1); /* 中等减速 */
+  --animation-timing-function-decelerate-min: cubic-bezier(0.33, 0, 0.1, 1); /* 最小减速 */
+  --animation-timing-function-easy-ease-max: cubic-bezier(0.8, 0, 0.2, 1); /* 最慢，快，最慢 */
+  --animation-timing-function-easy-ease: cubic-bezier(0.33, 0, 0.67, 1); /* 稍慢，稍快，稍慢 */
+  --animation-timing-function-liner: cubic-bezier(0, 0, 1, 1); /* 线性 */
+  --animation-duration-ultra-fast: 50ms;
+  --animation-duration-faster: 100ms;
+  --animation-duration-fast: 150ms;
+  --animation-duration-normal: 200ms;
+  --animation-duration-gentle: 250ms;
+  --animation-duration-slow: 300ms;
+  --animation-duration-slower: 400ms;
+  --animation-duration-ultra-slow: 500ms;
+  /* 颜色 */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-transparent: rgba(0, 0, 0, 0);
+  --color-foreground: #242424;
+  --color-foreground-hover: #242424;
+  --color-foreground-pressed: #242424;
+  --color-foreground-selected: #242424;
+  --color-foreground-2: #424242;
+  --color-foreground-3: #616161;
+  --color-foreground-4: #707070;
+  --color-foreground-disable: #bdbdbd;
+  --color-foreground-link: #115ea3;
+  --color-foreground-link-hover: #0f548c;
+  --color-foreground-link-pressed: #0c3b5e;
+  --color-foreground-link-selected: #115ea3;
+  --color-background: #ffffff;
+  --color-background-hover: #f5f5f5;
+  --color-background-pressed: #e0e0e0;
+  --color-background-selected: #ebebeb;
+  --color-background-2: #fafafa;
+  --color-background-3: #f5f5f5;
+  --color-background-4: #f0f0f0;
+  --color-background-5: #ebebeb;
+  --color-background-6: #e6e6e6;
+  --color-background-alpha: rgba(255, 255, 255, 0.5);
+  --color-background-alpha-2: rgba(255, 255, 255, 0.8);
+  --color-border: #d1d1d1;
+  --color-border-hover: #c7c7c7;
+  --color-border-pressed: #b3b3b3;
+  --color-border-selected: #bdbdbd;
+  --color-border-2: #e0e0e0;
+  --color-border-3: #f0f0f0;
+}
