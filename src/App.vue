@@ -19,12 +19,12 @@ import AppsView from './views/AppsView.vue';
   line-height: 32px;
   text-align: center;
   font-size: 14px;
-  color: rgba(60, 60, 60, 0.7);
+  color: var(--color-foreground-light);
   user-select: none;
-  background-color: #f9f9f9;
+  background-color: var(--background-color-hover);
 }
 .copyright a {
-  color: #33a06f;
+  color: var(--color-foreground-link);
   text-decoration: none;
 }
 </style>
