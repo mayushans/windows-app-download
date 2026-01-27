@@ -10,7 +10,7 @@ export default async () => {
       return {
         name: "office-tool-plus",
         view_name: "Office Tool Plus",
-        view_icon: "otp.png",
+        view_icon: "otp.webp",
         page: url,
         type: "办公软件",
         version: res.tag_name,

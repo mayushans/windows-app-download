@@ -9,7 +9,7 @@ export default async () => {
       return {
         name: "ventoy",
         view_name: "Ventoy",
-        view_icon: "ventoy.png",
+        view_icon: "ventoy.webp",
         page: page,
         type: "系统工具",
         version: res.tag_name,

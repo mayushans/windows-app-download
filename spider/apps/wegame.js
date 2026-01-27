@@ -17,7 +17,7 @@ export default async () => {
   return {
     name: "wegame",
     view_name: "WeGame",
-    view_icon: "wegame.png",
+    view_icon: "wegame.webp",
     page: page,
     type: "游戏",
     version: version,

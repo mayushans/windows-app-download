@@ -5,7 +5,7 @@ export default async () => {
   return {
     name: "epic",
     view_name: "Epic Games Launcher",
-    view_icon: "epic.svg",
+    view_icon: "epic.webp",
     type: "游戏",
     page: url,
     version: '',

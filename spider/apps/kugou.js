@@ -12,7 +12,7 @@ export default async () => {
     name: "kugou",
     type: "音乐播放",
     view_name: "酷狗音乐",
-    view_icon: "kugou.png",
+    view_icon: "kugou.webp",
     page: url,
     version: version,
     download_url: x86url,

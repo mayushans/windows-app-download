@@ -11,7 +11,7 @@ export default async () => {
     name: "bandizip",
     type: "文件管理",
     view_name: "Bandi Zip",
-    view_icon: "bandizip.png",
+    view_icon: "bandizip.svg",
     version: version,
     download_url: res,
     page: page

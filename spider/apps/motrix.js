@@ -8,7 +8,7 @@ export default async () => {
         name: "motrix",
         type: "下载工具",
         view_name: "Motrix",
-        view_icon: "motrix.png",
+        view_icon: "motrix.webp",
         page: url,
         version: res.tag_name,
         download_url: res.assets[i].url,

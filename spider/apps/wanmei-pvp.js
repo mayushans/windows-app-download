@@ -18,7 +18,7 @@ export default async () => {
   return {
     name: "wanmei-pvp",
     view_name: "完美世界PVP",
-    view_icon: "wanmei-pvp.png",
+    view_icon: "wanmei-pvp.webp",
     page: page,
     type: "游戏",
     version: version,

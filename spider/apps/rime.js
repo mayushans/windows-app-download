@@ -8,7 +8,7 @@ export default async () => {
   return {
     name: "rime",
     view_name: "Rime",
-    view_icon: "rime.png",
+    view_icon: "rime.webp",
     type: "输入法",
     page: url,
     version: version,

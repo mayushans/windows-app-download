@@ -10,7 +10,7 @@ export default async () => {
       return {
         name: "qimgv",
         view_name: "QImgv",
-        view_icon: "qimgv.png",
+        view_icon: "qimgv.webp",
         page: url,
         type: "图片查看",
         version: res.tag_name,

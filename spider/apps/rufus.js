@@ -7,7 +7,7 @@ export default async () => {
       return {
         name: "rufus",
         view_name: "Rufus",
-        view_icon: "rufus.png",
+        view_icon: "rufus.webp",
         page: url,
         type: "系统工具",
         version: res.tag_name,

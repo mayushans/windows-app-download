@@ -8,7 +8,7 @@ export default async () => {
         name: "macro-deck",
         type: "外设驱动",
         view_name: "Macro Deck",
-        view_icon: "macro-deck.png",
+        view_icon: "macro-deck.webp",
         page: page,
         download_url: res.assets[i].url,
         version: res.tag_name,

@@ -6,7 +6,7 @@ export default async () => {
   return {
     name: "huorong",
     view_name: "火绒安全",
-    view_icon: "huorong.png",
+    view_icon: "huorong.webp",
     type: "系统工具",
     page: page,
     version: res.version,

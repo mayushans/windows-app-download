@@ -7,7 +7,7 @@ export default async () => {
       return {
         name: "etcher",
         view_name: "balenaEtcher",
-        view_icon: "etcher.png",
+        view_icon: "etcher.webp",
         type: "系统工具",
         page: page,
         version: res.tag_name,

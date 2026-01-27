@@ -7,7 +7,7 @@ export default async () => {
   return {
     name: "yy",
     view_name: "YY语音",
-    view_icon: "yy.png",
+    view_icon: "yy.webp",
     type: "即时通讯",
     page: page,
     version: version,
