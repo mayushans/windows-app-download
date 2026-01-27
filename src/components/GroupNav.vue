@@ -21,7 +21,7 @@ export default {
     <div class="header-content">
       <div class="site-info">
         <div class="site-logo">
-          <img src="/static/favicon.svg" />
+          <img src="/public/favicon.svg" />
         </div>
         <div class="site-name">Windows 应用下载</div>
       </div>
