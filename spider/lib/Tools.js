@@ -80,7 +80,7 @@ Tools.requestGetRedirects = async (url, config) => {
     }
   }
   var res = await axios(axiosConfig);
-  if (res.status == 302) {
+  if (res.status == 302 || res.status == 301) {
     return res.headers.location;
   }
   return false;

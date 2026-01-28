@@ -4,8 +4,7 @@ export default async () => {
   var res = await Tools.requestGet(url);
   var dom = Tools.dom(res);
   var version = dom('#dl').text().match(/\d+\.\d+\.\d+\.\d+/)[0]
-
-  var downloadUrl = "https://www.voidtools.com" + dom("a.button:nth-child(11)").attr("href");
+  var downloadUrl = "https://www.voidtools.com" + dom("a.button:nth-child(21)").attr("href");
   return {
     name: "everything",
     view_name: "Everything",

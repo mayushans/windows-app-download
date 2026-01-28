@@ -7,7 +7,7 @@ export default async () => {
     .first()
     .html()
     .match(/\d+\.\d+\.\d+/g)[0];
-  var x86url = dom("div.product:nth-child(2) > ul:nth-child(2) > li:nth-child(1) > a:nth-child(4)").attr("href");
+  var x86url = dom("div.product:nth-child(2) > ul:nth-child(2) > li:nth-child(1) > a:nth-child(4)").attr("data-url");
   return {
     name: "qqmusic",
     view_name: "QQ音乐",

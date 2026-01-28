@@ -7,7 +7,7 @@ export default async () => {
   var version = dom("div.content > div:nth-child(2) > p:nth-child(1)")
     .text()
     .match(/\d+\.\d+\.\d+\.\d+/g)[0];
-  var x86url = dom("div.content > div:nth-child(1) > a:nth-child(2)").attr("href");
+  var x86url = dom("#main_link").attr("href");
   return {
     name: "centbrowser",
     type: "浏览器",
